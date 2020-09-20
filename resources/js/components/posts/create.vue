@@ -14,6 +14,9 @@
               <div class="form-group">
                 <label>Title:</label>
                 <input type="text" class="form-control" v-model="post.title">
+                <span class="help-block">
+                    <strong>{{ errors.mobile }}</strong>
+                </span>
               </div>
             </div>
             </div>
@@ -40,6 +43,7 @@ import { mapState, mapActions, mapMutations } from 'vuex';
 export default {
   computed: mapState({
     post: state => state.postModule.post,
+    errors: state => state.postModule.errors,
   }),
   created() {
     const vm = this;

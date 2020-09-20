@@ -3,9 +3,11 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import VueRouter from 'vue-router';
-import store from './modules/store';
+import VueSweetalert2 from 'vue-sweetalert2';
 
+import store from './modules/store';
 Vue.use(VueRouter);
+Vue.use(VueSweetalert2);
 
 import Navbar from './components/pages/navbar';
 import Footer from './components/pages/footer';

@@ -55,7 +55,18 @@ export default {
         'deletePost',
     ]),
     remove(id) {
-      this.deletePost(id);
+      this.$swal({
+          title: "Delete this post?",
+          text: "Are you sure? You won't be able to revert this!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "Yes"
+      }).then((result) => {
+          if (result.value) {
+            this.deletePost(id);
+          }
+      });
     }
   }
 }
